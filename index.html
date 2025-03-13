@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecanografia</title>
+    
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="img/logoF.png" type="image/x-icon">
+</head>
+
+<body class="flex items-center flex-wrap justify-center h-screen bg-[url(/img/fondo.jpg)]">
+
+    <div class="mx-4">
+        <div
+            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="flex flex-row-reverse">
+                <h4 class="text-white text-1xl" id="tiempo">00:00:00</h4>
+            </div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MecanograficGame V 1.0</h5>
+            <div class="flex flex-col">
+                <div class="flex flex-row justify-center">
+                    <p class="font-normal text-gray-700 dark:text-gray-400 text-center text-2xl mx-4" id="texto"></p>
+                    <span class="font-normal text-gray-700 dark:text-gray-400 text-center text-2xl" id="combo"></span>
+                </div>
+                <div class="flex items-center justify-center flex-col">
+                    <div>
+                        <h3 class="text-white">Letras falladas: <span id="letrasFalladas"></span></h3>
+                        <h3 class="text-white">Letras acertadas: <span id="letrasAcertadas"></span></h3>
+                        <h3 class="text-white">Palabras acertadas: <span id="palabrasAcertadas"></span></h3>
+                    </div>
+                    <button id="btnIniciar" class="text-white border rounded-xl px-2 my-2 cursor-pointer">INICIAR
+                        JUEGO</button>
+                    <div class="self-start pt-5 pb-0 mt-0">
+                        <button id="btnConfiguracion"
+                            class="cursor-pointer border border-white px-2 text-white">Configurar juego</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden mx-4" id="cardConfig">
+        <div
+            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div>
+                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MecanograficGame V 1.0</h2>
+            </div>
+
+            <div class="border border-1 border-white p-2 my-1">
+                <h2 class="text-center text-white" >Modo</h2>
+                <div>
+                    <form class="space-y-2">
+                        <label class="flex items-center space-x-2">
+                          <input id="libre" type="radio" name="opcion" value="1" class="cursor-pointer w-5 h-5 text-blue-600 border-gray-300 focus:ring-blue-500">
+                          <span class="text-white">Libre</span>
+                        </label>
+                      
+                        <label class="flex items-center space-x-2">
+                          <input id="reloj" type="radio" name="opcion" value="2" class="cursor-pointer w-5 h-5 text-blue-600 border-gray-300 focus:ring-blue-500">
+                          <span class="text-white">Contra-reloj</span>
+                        </label>
+                      </form>
+                      
+                </div>
+            </div>
+
+            <div class="border border-1 p-2 border-white my-1">
+                <h2 class="text-center text-white pb-2 pt-0">Tiempo</h2>
+                <label for="segundos" class="text-white">Segundos:</label>
+                <input type="number" value="10" min="1" id="segundos" class="w-20 h-8 mx-4 border border-blue-400 rounded-md shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-300 text-lg appearance-none">
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" loop>
+        <source src="audio/badP.mp3" type="audio/mpeg">
+    </audio>
+
+    </style>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/cronometro.js"></script>
+    <script src="scripts/config.js"></script>
+</body>
+
+</html>
